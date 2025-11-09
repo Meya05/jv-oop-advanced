@@ -1,21 +1,24 @@
 package core.basesyntax;
 
 public class HelloWorld {
-    public static void main(String[] args) {
-        Figure[] figures = new Figure[8];
-        int halfSize = figures.length / 2;
+    private static final int ARRAY_SIZE = 8;
+    private static final int HALF_SIZE = ARRAY_SIZE / 2;
 
-        for (int i = 0; i < halfSize; i++) {
-            figures[i] = FigureSupplier.getRandomFigure();
+    public static void main(String[] args) {
+        FigureSupplier figureSupplier = new FigureSupplier();
+        Figure[] figures = new Figure[ARRAY_SIZE];
+
+        for (int i = 0; i < HALF_SIZE; i++) {
+            figures[i] = figureSupplier.getRandomFigure();
         }
 
-        for (int i = halfSize; i < figures.length; i++) {
-            figures[i] = FigureSupplier.getDefaultFigure();
+        for (int i = HALF_SIZE; i < ARRAY_SIZE; i++) {
+            figures[i] = figureSupplier.getDefaultFigure();
         }
 
         System.out.println("--- Array of Figures ---");
         for (Figure figure : figures) {
-            figure.draw();
+            System.out.println(figure.draw());
         }
     }
 }

@@ -3,19 +3,26 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    private static final Random RANDOM = new Random();
+    private static final int FIGURE_TYPE_COUNT = 5;
+    private static final double MIN_PROPERTY_VALUE = 1.0;
+    private static final double MAX_PROPERTY_VALUE = 20.0;
+    private static final double DEFAULT_RADIUS = 10.0;
+    private static final String DEFAULT_COLOR = "white";
 
-    public static Figure getDefaultFigure() {
-        return new Circle("white", 10.0);
+    private final Random random = new Random();
+    private final ColorSupplier colorSupplier = new ColorSupplier();
+
+    public Figure getDefaultFigure() {
+        return new Circle(DEFAULT_COLOR, DEFAULT_RADIUS);
     }
 
-    public static Figure getRandomFigure() {
-        String randomColor = ColorSupplier.getRandomColor();
-        int figureType = RANDOM.nextInt(5);
+    public Figure getRandomFigure() {
+        String randomColor = colorSupplier.getRandomColor();
+        int figureType = random.nextInt(FIGURE_TYPE_COUNT);
 
-        double prop1 = 1.0 + (20.0 - 1.0) * RANDOM.nextDouble();
-        double prop2 = 1.0 + (20.0 - 1.0) * RANDOM.nextDouble();
-        double prop3 = 1.0 + (20.0 - 1.0) * RANDOM.nextDouble();
+        double prop1 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
+        double prop2 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
+        double prop3 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
 
         switch (figureType) {
             case 0:
