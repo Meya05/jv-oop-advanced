@@ -17,8 +17,8 @@ public class Rectangle implements Figure {
     }
 
     @Override
-    public String draw() {
-        return "Figure: rectangle, area: " + String.format("%.2f", getArea()) + " sq. units, side1: "
-                + String.format("%.2f", side1) + ", side2: " + String.format("%.2f", side2) + " units, color: " + color;
+    public void draw() { // Zmiana na VOID
+        System.out.println("Figure: rectangle, area: " + String.format("%.2f", getArea()) + " sq. units, side1: "
+                + String.format("%.2f", side1) + " units, side2: " + String.format("%.2f", side2) + " units, color: " + color); // Ujednolicone units
     }
 }

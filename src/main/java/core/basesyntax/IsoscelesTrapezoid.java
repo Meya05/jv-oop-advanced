@@ -19,9 +19,9 @@ public class IsoscelesTrapezoid implements Figure {
     }
 
     @Override
-    public String draw() {
-        return "Figure: isosceles trapezoid, area: " + String.format("%.2f", getArea()) + " sq. units, a: "
-                + String.format("%.2f", a) + ", b: " + String.format("%.2f", b) + ", h: "
-                + String.format("%.2f", h) + " units, color: " + color;
+    public void draw() {
+        System.out.println("Figure: isosceles trapezoid, area: " + String.format("%.2f", getArea()) + " sq. units, a: "
+                + String.format("%.2f", a) + " units, b: " + String.format("%.2f", b) + " units, h: "
+                + String.format("%.2f", h) + " units, color: " + color);
     }
 }

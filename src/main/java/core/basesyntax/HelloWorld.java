@@ -1,7 +1,7 @@
 package core.basesyntax;
 
 public class HelloWorld {
-    private static final int ARRAY_SIZE = 8;
+    private static final int ARRAY_SIZE = 6;
     private static final int HALF_SIZE = ARRAY_SIZE / 2;
 
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class HelloWorld {
 
         System.out.println("--- Array of Figures ---");
         for (Figure figure : figures) {
-            System.out.println(figure.draw());
+            figure.draw();
         }
     }
 }

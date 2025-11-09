@@ -20,21 +20,22 @@ public class FigureSupplier {
         String randomColor = colorSupplier.getRandomColor();
         int figureType = random.nextInt(FIGURE_TYPE_COUNT);
 
-        double prop1 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
-        double prop2 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
-        double prop3 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
+
+        double randomProp1 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
+        double randomProp2 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
+        double randomProp3 = MIN_PROPERTY_VALUE + (MAX_PROPERTY_VALUE - MIN_PROPERTY_VALUE) * random.nextDouble();
 
         switch (figureType) {
             case 0:
-                return new Square(randomColor, prop1);
+                return new Square(randomColor, randomProp1);
             case 1:
-                return new Rectangle(randomColor, prop1, prop2);
+                return new Rectangle(randomColor, randomProp1, randomProp2);
             case 2:
-                return new RightTriangle(randomColor, prop1, prop2);
+                return new RightTriangle(randomColor, randomProp1, randomProp2);
             case 3:
-                return new Circle(randomColor, prop1);
+                return new Circle(randomColor, randomProp1);
             case 4:
-                return new IsoscelesTrapezoid(randomColor, prop1, prop2, prop3);
+                return new IsoscelesTrapezoid(randomColor, randomProp1, randomProp2, randomProp3);
             default:
                 return getDefaultFigure();
         }
